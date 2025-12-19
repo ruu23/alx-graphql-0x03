@@ -1,7 +1,9 @@
 import EpisodeCard from "@/components/common/EpisodeCard"
+import CrashComponent from "@/components/CrashComponen"
 import { GET_EPISODES } from "@/graphql/queries"
 import { EpisodeProps } from "@/interfaces"
 import { useQuery } from "@apollo/client/react"
+import { ErrorBoundary } from "next/dist/client/components/error-boundary"
 import { useEffect, useState } from "react"
 
 const Home: React.FC = () => {
@@ -46,7 +48,7 @@ const Home: React.FC = () => {
         {/* Pagination Buttons */}
         <div className="flex justify-between mt-6">
           <button 
-            onClick={() => setPage((pre) => pre>1? pre-1 : pre)}
+            onClick={() => setPage(prev => prev > 1 ? prev - 1 : 1)}
             className="bg-[#45B69C] text-white font-semibold py-2 px-6 rounded-lg shadow-lg hover:bg-[#3D9B80] transition duration-200 transform hover:scale-105">
             Previous
           </button>
