@@ -1,9 +1,7 @@
 import EpisodeCard from "@/components/common/EpisodeCard"
-import CrashComponent from "@/components/CrashComponen"
 import { GET_EPISODES } from "@/graphql/queries"
 import { EpisodeProps } from "@/interfaces"
 import { useQuery } from "@apollo/client/react"
-import { ErrorBoundary } from "next/dist/client/components/error-boundary"
 import { useEffect, useState } from "react"
 
 const Home: React.FC = () => {
