@@ -1,3 +1,4 @@
+"use client";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import client from "@/graphql/apolloClient";
@@ -6,10 +7,10 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ErrorBoundary>
       <ApolloProvider client={client}>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </ApolloProvider>
-    </ErrorBoundary>
   )
 }
